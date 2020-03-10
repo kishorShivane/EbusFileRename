@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EbusFileRenameApp", "EbusFileRenameApp\EbusFileRenameApp.csproj", "{B4CBB4BC-6ADA-44E5-BCF8-162FF6D9DB81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBusFileRename.Service", "EBusFileRename.Service\EBusFileRename.Service.csproj", "{D5576816-2712-404A-8C0B-45246959EDEC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EBusFileRename.Setup", "EBusFileRename.Setup\EBusFileRename.Setup.vdproj", "{849A35C6-5340-48B6-A4E4-035FEA8ED5AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4CBB4BC-6ADA-44E5-BCF8-162FF6D9DB81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4CBB4BC-6ADA-44E5-BCF8-162FF6D9DB81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4CBB4BC-6ADA-44E5-BCF8-162FF6D9DB81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4CBB4BC-6ADA-44E5-BCF8-162FF6D9DB81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5576816-2712-404A-8C0B-45246959EDEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5576816-2712-404A-8C0B-45246959EDEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5576816-2712-404A-8C0B-45246959EDEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5576816-2712-404A-8C0B-45246959EDEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{849A35C6-5340-48B6-A4E4-035FEA8ED5AF}.Debug|Any CPU.ActiveCfg = Debug
+		{849A35C6-5340-48B6-A4E4-035FEA8ED5AF}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D8B1E26-2DE4-4DD8-922F-9AFE716F9DF6}
+	EndGlobalSection
+EndGlobal
