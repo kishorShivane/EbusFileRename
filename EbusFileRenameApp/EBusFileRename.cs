@@ -2,11 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -45,14 +42,23 @@ namespace EbusFileRenameApp
                 List<string> files = helper.DirSearch(Constants.SourceFilePath);
                 if (files.Any())
                 {
-                    files.ForEach(x=> {
-                        var fileName = Path.GetFileName(x);
-                        var fileNameWithoutExt = Path.GetFileNameWithoutExtension(x);
+                    files.ForEach(x =>
+                    {
+                        string fileName = Path.GetFileName(x);
+                        string fileNameWithoutExt = Path.GetFileNameWithoutExtension(x);
                         if (fileName.StartsWith("00_") || (fileNameWithoutExt.Length == 6 && int.TryParse(fileNameWithoutExt, out int number)))
                         {
-                            var result = Path.ChangeExtension(x, ".01");
+                            string result = string.Empty;
+                            int seeder = 0;
+                        FileExist:
+                            seeder++;
+                            result = Path.ChangeExtension(x, ".0" + seeder.ToString());
                             File.Move(x, result);
-                            //fileName = Path.GetFileName(result);
+                            if (helper.Exists(result, Constants.ExtRenameFilePath))
+                            {
+                                goto FileExist;
+                            }
+
                             helper.MoveFile(result, Constants.ExtRenameFilePath);
                         }
                         else if (fileName.StartsWith("status"))
@@ -71,7 +77,7 @@ namespace EbusFileRenameApp
                             helper.MoveFile(x, Constants.OthersFilePath);
                         }
                     });
-                    
+
                 }
                 #endregion
             }

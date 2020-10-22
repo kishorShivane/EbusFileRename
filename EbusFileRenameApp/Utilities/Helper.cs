@@ -86,5 +86,25 @@ namespace EbusFileRenameApp.Utilities
                 return;
             }
         }
+
+        public bool Exists(string sourcepath, string destinationPath)
+        {
+            try
+            {
+                string file = Path.GetFileName(sourcepath);
+                string destinationFilePath = destinationPath + "//" + file;
+
+                //Checks if files exists and deletes if they do
+                if (File.Exists(destinationFilePath))
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
