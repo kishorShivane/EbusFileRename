@@ -47,7 +47,8 @@ namespace EbusFileRenameApp
                 {
                     files.ForEach(x=> {
                         var fileName = Path.GetFileName(x);
-                        if (fileName.StartsWith("00_"))
+                        var fileNameWithoutExt = Path.GetFileNameWithoutExtension(x);
+                        if (fileName.StartsWith("00_") || (fileNameWithoutExt.Length == 6 && int.TryParse(fileNameWithoutExt, out int number)))
                         {
                             var result = Path.ChangeExtension(x, ".01");
                             File.Move(x, result);
